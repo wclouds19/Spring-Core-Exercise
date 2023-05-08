@@ -9,5 +9,4 @@ class LearnSpringCoreApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
