@@ -9,7 +9,7 @@ import bootcamp.spring.core.data.FooBar;
 import org.springframework.context.annotation.Primary;
 
 @Configuration
-public class DependencyIjectionConfiguration {
+public class DependencyInjectionConfiguration {
     
     @Primary
     @Bean
