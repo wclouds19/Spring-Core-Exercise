@@ -21,7 +21,7 @@ public class LiveCycleTest {
 
     @AfterEach
     void tearDown(){
-        applicationContext.close();   //Manually to close the connection
+        //applicationContext.close();   //Manually to close the connection
     } 
 
     @Test
