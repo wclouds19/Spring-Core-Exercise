@@ -1,0 +1,13 @@
+package bootcamp.spring.core;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan(basePackages = {
+    "bootcamp.spring.core.service",
+    "bootcamp.spring.core.repository"
+})
+public class ComponentConfiguration {
+    
+}
