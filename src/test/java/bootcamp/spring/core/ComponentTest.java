@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import bootcamp.spring.core.data.MultiFoo;
 import bootcamp.spring.core.repository.CategoryRepository;
 import bootcamp.spring.core.repository.CustomerRepository;
 import bootcamp.spring.core.repository.ProductRepository;
@@ -50,8 +51,18 @@ public class ComponentTest {
     void fieldDiTest(){
         //This method is no longer recomended
         CustomerService service = applicationContext.getBean(CustomerService.class);
-        CustomerRepository repository = applicationContext.getBean(CustomerRepository.class);
+        //CustomerRepository repository = applicationContext.getBean(CustomerRepository.class);
+        CustomerRepository normalCustomerRepository = applicationContext.getBean("normalCustomerRepository", CustomerRepository.class);
+        CustomerRepository premiumCustomerRepository = applicationContext.getBean("premiumCustomerRepository", CustomerRepository.class);
 
-        Assertions.assertSame(repository, service.getCustomerRepository());
+        //Assertions.assertSame(repository, service.getCustomerRepository());
+        Assertions.assertSame(normalCustomerRepository, service.getNormalCustomerRepository());
+        Assertions.assertSame(premiumCustomerRepository, service.getPremiumCustomerRepository());
+    }
+
+    @Test
+    void objectProviderTest(){
+        MultiFoo multiFoo = applicationContext.getBean(MultiFoo.class);
+        Assertions.assertEquals(3, multiFoo.getFoo().size());
     }
 }
