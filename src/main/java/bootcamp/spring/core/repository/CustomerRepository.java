@@ -1,8 +1,8 @@
 package bootcamp.spring.core.repository;
 
-import org.springframework.stereotype.Component;
+//import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class CustomerRepository {
     
 }
