@@ -31,7 +31,7 @@ public class FooApplication {
     //CUSTOMIZING SPRING APPLICATION
     public static void main(String[] args){
         SpringApplication application = new SpringApplication(FooApplication.class); 
-        application.setBannerMode(Mode.OFF);
+        //application.setBannerMode(Mode.OFF);
         application.setListeners(List.of(new AppStartingListener()));
 
         ConfigurableApplicationContext applicationContext = application.run(args);
